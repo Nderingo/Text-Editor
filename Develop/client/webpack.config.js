@@ -7,14 +7,24 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 plugins: [
   new HtmlWebpackPlugin({
     template: './index.html',
-    title: 'Webpack Plugin'
+    title: 'JATE'
   }),
+
+  // Injects our custom service worker
+  new InjectManifest({
+    swSrc: "./src-sw.js",
+    swDest: "src-sw.js",
+  }),
+
+  
   new GenerateSW(),
   new WebpackPwaManifest({
     // TODO: Create a manifest.json:
+      fingerprints: false,
+      inject: true,
       name: 'My Progressive Web App',
-      short_name: 'MyPWA',
-      description: 'My awesome Progressive Web App!',
+      short_name: 'JATE',
+      description: 'My awesome Text Editor!',
       background_color: '#ffffff',
       crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
       icons: [
