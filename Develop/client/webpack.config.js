@@ -28,37 +28,28 @@ module.exports = () => {
   new InjectManifest({
     swSrc: "./src-sw.js",
     swDest: "src-sw.js",
-  }),
+}),
 
   
-  new GenerateSW(),
-  new WebpackPwaManifest({
-    // TODO: Create a manifest.json:
-      fingerprints: false,
-      inject: true,
-      name: 'My Progressive Text Editor',
-      short_name: 'JATE',
-      description: 'My awesome Text Editor!',
-      background_color: '#ffffff',
-      crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
-      icons: [
-        {
-          src: path.resolve('./assets/images/logo.png'),
-          sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
-        },
-        {
-          src: path.resolve('./assets/images/logo.png'),
-          size: '1024x1024' // you can also use the specifications pattern
-        },
-        {
-          src: path.resolve('./assets/images/logo.png'),
-          size: '1024x1024',
-          purpose: 'maskable'
-        }
-      ]
-    })
- 
-  
+new WebpackPwaManifest({
+  fingerprints: false,
+  inject: true,
+  name: 'JATE - Just Another Text Editor',
+  short_name: 'J.A.T.E.',
+  description: 'Just Another Text Editor!',
+  background_color: '#7eb4e2',
+  theme_color: '#7eb4e2',
+  start_url: '/',
+  publicPath: '/',
+  icons: [
+    {
+      src: path.resolve('src/images/logo.png'),
+      sizes: [96, 128, 192, 256, 384, 512],
+      destination: path.join('assets', 'icons'),
+    },
+  ],
+}),
+//////////
 ],
 // TODO: Add CSS loaders and babel to webpack.
 
