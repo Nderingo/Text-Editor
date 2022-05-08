@@ -36,7 +36,7 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: "Wildly Awesome Text Editor",
+        name: " Awesome Text Editor",
         short_name: "Text Editor",
         description: "This is by far the coolest text editor.",
         background_color: "#225ca3",
