@@ -13,4 +13,4 @@ The following  web application that is a JavaScript text editor. This app will u
 
 ## Screenshot
 
-![.](./client/src/images/JATE.png)
+![.](./client/src/images/text-editor.png)
